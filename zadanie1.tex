@@ -6,7 +6,8 @@
 \usepackage{graphicx}
 \usepackage{multirow}
 \usepackage{float}
-
+\usepackage{esvect}
+\graphicspath{{pictures/}}
 \geometry{margin=0.7in}
 \def\tytul{Zasada zachowania energii}
 
@@ -42,17 +43,43 @@
         Policz współczynnik sprężystości \textbf{\underline{jednej}} sprężyny jaką potrzebują naukowcy.
         Przyjmij współczynnik grawitacji 10$\frac{m}{s^2}$
     \end{flushleft}
+    \begin{figure}[H]
+        \centering
+        \includegraphics{trampolina}
+        \caption{Rysunek pomocniczy}
+    \end{figure}
+    \clearpage
     \section{Zadanie}
     \begin{flushleft}
-        tutaj będzie zadanie 2
+        Dwóch kolegów trenują z piłkami nożnymi, w pewnym momencie obydwaj kopią swoje piłki tak że pierwsza leci pod kątem $\alpha _1$=45$^\circ$ a druga pod kątem $\beta _1$=0$^\circ$,
+        następnie zderzają się i lecą dalej gdzie pierwsza leci pod kątem $\beta _2$=30$^\circ$.
+        Pierwszy z nich kopnął swoją piłkę z prędkością $v_1$=50$\frac{km}{h}$ a drugi z nich z prędkością $v_2$=40$\frac{km}{h}$.
+        Znajdź prędkości końcowe tych piłek. Masy są identyczne.
     \end{flushleft}
+    \begin{figure}[H]
+        \centering
+        \includegraphics{pilki}
+        \caption{Rysunek pomocniczy}
+    \end{figure}
     %\clearpage
     \section{Rozwiązania}
     \subsection{Zadanie 1}
-    \LARGE
+    \Large
         \(mgh=\frac{kx^2}{2} \rightarrow k=\frac{2mgh}{x^2}\)\\
         \(k=\frac{2\ast 1500 \ast 10\ast 45}{(4.5)^2} \rightarrow k=66666.(6)\frac{N}{m}\)\\
-        k\footnotesize sprężyny \LARGE\(=\frac{66666.(6)}{144} \rightarrow\)k\footnotesize sprężyny \LARGE=\underline{\(462.(962)\frac{N}{m}\)}
+        k\footnotesize sprężyny \Large\(=\frac{66666.(6)}{144} \rightarrow\)k\footnotesize sprężyny \LARGE=\underline{\(462.(962)\frac{N}{m}\)}
     \subsection{Zadanie 2}
+    \large
+    $m_1\vv{v_1}+m_2\vv{v_2}=m_1\vv{u_1}+m_2\vv{u_2} \rightarrow \vv{v_1} + \vv{v_2} = \vv{u_1} + \vv{u_2}$\\
+    $\frac{m_1v_1^2}{2}+\frac{m_2v_2^2}{2}=\frac{m_1u_1^2}{2}+\frac{m_2u_2^2}{2} \rightarrow v_1^2 + v_2^2 = u_1^2 + u_2^2 $
     
+    \begin{equation}
+        \begin{cases}
+           v_1\cos\alpha _1 + v_2\cos\beta _1 = u_1\cos\alpha _2 + u_2\cos\beta _2 &\\
+            -v_1\sin\alpha _1 + v_2\sin\beta _1 = u_1\sin\alpha _2 - u_2\sin\beta _2 &\\
+           v_1^2 + v_2^2 = u_1^2 + u_2^2 &\\
+        \end{cases}
+    \end{equation}
+        
+            
 \end{document}
