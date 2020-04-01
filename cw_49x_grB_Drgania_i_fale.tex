@@ -12,8 +12,8 @@
 \usepackage{fancyhdr} %headery i footery
 \usepackage{circuitikz} %schematy elektryczne
 \usepackage{ragged2e} %justowanie tekstu
-
-
+\usepackage{ulem} %przekreślanie tekstu \xout{text} - kreślenie z lewej na prawo, wiele 
+\usepackage{cancel} %przekreślenie tekstu 2 opcja \cancel{text} - pojedyncze skreślenie z prawej na lewą
 %\usepackage{subcaption}
 %\usepackage{caption}
 %\usepackage{enumitem}
@@ -86,7 +86,7 @@
 
     \centering
     \section{Zadania do zrobienia}
-        \subsection{Zadanie z drgań}
+        \subsection{Zadanie 1}
             \subsubsection{Polecenie}
                 Zad.3(P) Ile wynosi stosunek energii kinetycznej do potencjalnej ciała wykonującego drgania harmoniczne 
                 kosinusoidalne dla chwili czasu t=$\frac{T}{6}$, jeżeli faza początkowa wynosi zero?\\ 
@@ -103,20 +103,40 @@
                 Dla drgania harmonicznego sinusoidalnego stosunek będzie wynosił $\frac{\sqrt{3}}{3}$ ponieważ:\\
                 $\frac{E_k(t)}{E_p(t)}=\frac{k}{k}*[\cot(\frac{\pi}{3})]^2 = \frac{1}{3}$\\
                 \clearpage
-        \subsection{Zadanie z fal}
+        \subsection{Zadanie 2}
             \subsubsection{Polecenie}
                 Zad.9. Wartości amplitud wymuszonych drgań harmonicznych są równe dla dwóch częstości siły wymuszającej: 
                 $\omega_1$=400 $\frac{rad}{s}$ oraz $\omega_2$=600 $\frac{rad}{s}$. 
                 Wyznacz częstość $\omega_{rez}$, dla której amplituda drgań wymuszonych osiągnie maksymalną wartość.
             \subsection{Rozwiązanie}
                 \textbf{Wzory:}\\
-                
+                Mechaniczne drgania wymuszone:$F(t)=F_0\cos(\omega t)$\\
+                $\frac{d^2x(t)}{dt^2}+2\beta\frac{dx(t)}{dt}+\omega_0^2x=f_0\cos(\omega t)$\\
+                Współczynnik tłumienia:$2\beta=\frac{b}{m}$\\
+                Częstość oscylatora nietłumionego:$omega_0^2=\frac{k}{m}$\\
+                $f_0=\frac{F_0}{m}$\\
+                Częstość rezonansowa:$\omega_r=\sqrt{\omega_0^2-2\beta^2}$\\
+                Amplituda wymuszona:$A(\omega)=\frac{F_0}{m\sqrt{(\omega_0^2-\omega^2)^2+4\beta^2\omega^2}}$
+                Amplituda rezonansowa:$A_r=\frac{f_0}{2\beta(\omega_0^2-\beta^2)}$\\
                 \textbf{Obliczenia:}\\
+                $A(\omega)=\frac{F_0}{m\sqrt{(\omega_0^2-\omega^2)^2+4\beta^2\omega^2}}$\\
+                $\omega_r=\sqrt{\omega_0^2-2\beta^2}$    $A(\omega_1)=A(\omega_2)$\\
+                $(\omega_0^2-\omega_1^2)^2+4\beta^2\omega_1^2=(\omega_0^2-\omega_2^2)^2+4\beta^2\omega_2^2$\\
+                $\cancel{\omega^4_0}-2\omega^2_0\omega^2_1+\omega^4_1+4\beta2\omega^2_1=\cancel{\omega^4_0}-2\omega^2_0\omega^2_2+\omega^4_2+4\beta2\omega^2_2$\\
+                $\omega^4_1-2\omega^2_1(\omega^2_0-2\beta^2)=\omega^4_2-2\omega^2_2(\omega^2_0-2\beta^2)$\\
+                $\omega^4_1-2\omega^2_1\omega^2_r=\omega^4_2-2\omega^2_2\omega^2_r$\\
+                Wyznaczenie $\omega_r$:\\
+                $-2\omega^2_1\omega^2_r+2\omega^2_2\omega^2_r=\omega^4_2-\omega^4_1$\\
+                $\omega^2_r(2\omega^2_2-2\omega^2_1)=(\omega^2_2-\omega^2_1)(\omega^2_2+\omega^2_1)$\\
+                $\omega_r=\sqrt{\frac{(\omega^2_2-\omega^2_1)(\omega^2_2+\omega^2_1)}{2(\omega^2_2-\omega^2_1)}}$\\
+                $\omega_r=\sqrt{\frac{\omega^2_1+\omega^2_2}{2}}$\\
+                $\omega_r=\sqrt{\frac{600^2+400^2}{2}}=510\frac{rad}{s}$\\
+
     \section{Wymyślone zadanie z fali kulistej}
         \subsection{Polecenie}
         \subsection{Rozwiązanie}
         \textbf{Wzory:}\\
-        Natężenie fali: $I= \frac{P_{źr}}{4 \Pi r^2}$\\
+        Natężenie fali: $I=\frac{P_{zr}}{4\Pi r^2}$\\
         Prawo odwrotnych kwadratów: $\frac{I_1}{I_2}=\frac{r_2^2}{r_1^2}$\\
         $I=\frac{1}{2}\rho v \omega ^2 s_m^2$\\
         $\Phi (r,t)=\frac{s_0}{r}\sin (kr-\omega t)$\\
