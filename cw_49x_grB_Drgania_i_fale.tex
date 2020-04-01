@@ -1,0 +1,116 @@
+\documentclass[a4paper,14pt]{extarticle}  %typ dokumentu
+
+\usepackage[utf8]{inputenc} %rodzaj czcionki
+\usepackage{geometry} %poprawienie marginesów
+\usepackage{polski} %polskie znaki
+\usepackage{multirow} %tabela
+\usepackage{graphicx} %tabela
+\usepackage{float} %tabela
+\usepackage{diagbox} % 2 dane w jednym prostokącie
+\usepackage{amsmath, amsthm, amssymb, bbm} % Matma
+\usepackage{tikz} %rysowanie
+\usepackage{fancyhdr} %headery i footery
+\usepackage{circuitikz} %schematy elektryczne
+\usepackage{ragged2e} %justowanie tekstu
+
+
+%\usepackage{subcaption}
+%\usepackage{caption}
+%\usepackage{enumitem}
+%\usepackage{blindtext} 
+
+
+%DO SPRAWDZENIA (używane przez profesjonalistów)
+% \usepackage{indentfirst}
+% \usepackage{textcomp}
+% \usepackage{exscale}
+% \usepackage{hyperref}
+% \usepackage{eurosym}
+% \usepackage{mathrsfs}
+% \usepackage{amscd}
+
+\graphicspath{{pictures/}}
+\geometry{margin=0.7in}
+\pagestyle{fancy}
+\fancyhf{}
+\cfoot{Strona \thepage}
+\rhead{Strona \thepage}
+
+%-----------------------PRZYDATNE LINKI----------------------------------
+%link do tworzenia tabeli https://tablesgenerator.com
+%symbole matematyczne: https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols
+%narzedzia matematyczne: https://en.wikibooks.org/wiki/LaTeX/Mathematics
+%krótkie podpowiedzi http://www.mif.pg.gda.pl/homepages/sylas/students/wdi/doc/latex-sciaga.html
+%symbole do schematów: http://texdoc.net/texmf-dist/doc/latex/circuitikz/circuitikzmanual.pdf
+%----------------------------------------------------------------------
+
+
+%-----------------------SEKCJA DANYCH----------------------------------
+\def\tytul{Drgania i Fale} %<<< tytuł ćwiczenia
+\def\nrcw{6} %<<< numer cwiczenia
+\def\data{\today} %<< data wykonania
+\def\prowadzacy{dr inż. Ewa Frączek} %<<<prowadzący
+\def\tworcy{Byczko Maciej\\Maziec Michał\\Pomarański Maciej} %<<< autorzy
+\def\nrgrupy{C} %<<<numer grupy
+\def\zajinfo{Tydzień parzysty\\ Godzina 11:15-13:00} %<<<informacje dotyczące zajęć
+
+\lhead{Ćwiczenia z fizyki - \tytul} %typ dokumentu tj Sprawozdanie, zadania itp.
+
+%JEZELI COS JESZCZE POTRZEBA W TEJ SEKCJI TO POINFORMOWAĆ!!!
+%----------------------------------------------------------------------
+
+%-----------------------SEKCJA FORMATOWANIA----------------------------
+% \textbf{pogrubienie}  \textit{kursywa}    \underline{podkreślenie}
+
+%----------------------------------------------------------------------
+
+
+
+\begin{document}
+
+%-------------------------------------TABELA-DANYCH--------------------------------------------------
+    \begin{table}[H]
+        \centering
+        \resizebox{\textwidth}{!}{
+        \begin{tabular}{|c|c|c|}\hline
+            \begin{tabular}[c]{@{}c@{}}                     \tworcy     \end{tabular}&
+            \begin{tabular}[c]{@{}c@{}}Prowadzący:\\        \prowadzacy \end{tabular}&
+            \begin{tabular}[c]{@{}c@{}}Numer ćwiczenia\\    \nrcw       \end{tabular}        \\\hline
+            \begin{tabular}[c]{@{}c@{}}Grupa nr.\\          \nrgrupy    \end{tabular}& 
+            \begin{tabular}[c]{@{}c@{}}Temat ćwiczenia:\\   \tytul      \end{tabular}& Ocena:\\\hline
+            \begin{tabular}[c]{@{}c@{}}                     \zajinfo    \end{tabular}&
+            \begin{tabular}[c]{@{}c@{}}Data wykonania:\\    \data       \end{tabular}&       \\\hline
+        \end{tabular}}
+    \end{table}
+%----------------------------------------------------------------------------------------------------
+
+    \centering
+    \section{Zadania do zrobienia}
+        \subsection{Zadanie z drgań}
+            \subsubsection{Polecenie}
+                Zad.3(P) Ile wynosi stosunek energii kinetycznej do potencjalnej ciała wykonującego drgania harmoniczne 
+                kosinusoidalne dla chwili czasu t=$\frac{T}{6}$, jeżeli faza początkowa wynosi zero?\\ 
+                Ile będzie wynosił ten sam stosunek energii dla drgania harmonicznego sinusoidalnego?
+            \subsubsection{Rozwiązanie}
+                \textbf{Wzory:}\\
+                $E_k(t)=\frac{1}{2}mv^2(t)\Leftrightarrow E_k(t)=\frac{1}{2}m[x_0\omega _0\sin(\omega_0t+\phi)]^2$\\
+                $E_p(t)=\frac{1}{2}kx^2(t)\Leftrightarrow E_p(t)=\frac{1}{2}k[x_0\cos(\omega_0t+\phi)]^2$\\
+                \textbf{Obliczenia:}\\
+                $\frac{E_k(t)}{E_p(t)}=\frac{\frac{1}{2}m[x_0\omega _0\sin(\omega_0t)]^2}{\frac{1}{2}k[x_0\cos(\omega_0t)]^2}$\\
+                $\frac{E_k(t)}{E_p(t)}=\frac{mx_0^2\omega_0^2[\sin(\frac{2\pi}{T}*\frac{T}{6}]^2}{kx_0^2[\cos(\frac{2\pi}{T}*\frac{T}{6})]^2}$\\
+                $\frac{E_k(t)}{E_p(t)}=\frac{m\omega _0^2[\sin(\frac{\pi}{3})]^2}{k[\cos(\frac{\pi}{3})]^2}$\\
+                $\frac{E_k(t)}{E_p(t)}=\frac{k}{k}*[\tan(\frac{\pi}{3})]^2 = 3$\\
+                Dla drgania harmonicznego sinusoidalnego stosunek będzie wynosił tyle samo ponieważ $x_0$ się skróci w obydwu przypadkach.
+                \clearpage
+        \subsection{Zadanie z fal}
+            \subsubsection{Polecenie}
+                Zad.9. Wartości amplitud wymuszonych drgań harmonicznych są równe dla dwóch częstości siły wymuszającej: 
+                $\omega_1$=400 $\frac{rad}{s}$ oraz $\omega_2$=600 $\frac{rad}{s}$. 
+                Wyznacz częstość $\omega_{rez}$, dla której amplituda drgań wymuszonych osiągnie maksymalną wartość.
+            \subsection{Rozwiązanie}
+                \textbf{Wzory:}\\
+                
+                \textbf{Obliczenia:}\\
+
+
+\end{document}
