@@ -1,0 +1,167 @@
+\documentclass[a4paper,14pt]{extarticle}  %typ dokumentu
+
+\usepackage[utf8]{inputenc} %rodzaj czcionki
+\usepackage{geometry} %poprawienie marginesów
+\usepackage{polski} %polskie znaki
+\usepackage{multirow} %tabela
+\usepackage{graphicx} %tabela
+\usepackage{float} %tabela
+\usepackage{diagbox} % 2 dane w jednym prostokącie
+\usepackage{amsmath, amsthm, amssymb, amsfonts, bbm} % Matma
+\usepackage{tikz} %rysowanie
+\usepackage{fancyhdr} %headery i footery
+\usepackage{circuitikz} %schematy elektryczne
+\usepackage{ragged2e} %justowanie tekstu
+\usepackage{ulem} %przekreślanie tekstu \xout{text} - kreślenie z lewej na prawo, wiele 
+\usepackage{cancel} %przekreślenie tekstu 2 opcja \cancel{text} - pojedyncze skreślenie z prawej na lewą
+%\usepackage{subcaption}
+%\usepackage{caption}
+%\usepackage{enumitem}
+%\usepackage{blindtext} 
+
+
+%DO SPRAWDZENIA (używane przez profesjonalistów)
+% \usepackage{indentfirst}
+% \usepackage{textcomp}
+% \usepackage{exscale}
+% \usepackage{hyperref}
+% \usepackage{eurosym}
+% \usepackage{mathrsfs}
+% \usepackage{amscd}
+
+\graphicspath{{pictures/}}
+\geometry{margin=0.7in}
+\pagestyle{fancy}
+\fancyhf{}
+\cfoot{Strona \thepage}
+\rhead{Strona \thepage}
+
+%-----------------------PRZYDATNE LINKI----------------------------------
+%link do tworzenia tabeli https://tablesgenerator.com
+%symbole matematyczne: https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols
+%narzedzia matematyczne: https://en.wikibooks.org/wiki/LaTeX/Mathematics
+%krótkie podpowiedzi http://www.mif.pg.gda.pl/homepages/sylas/students/wdi/doc/latex-sciaga.html
+%symbole do schematów: http://texdoc.net/texmf-dist/doc/latex/circuitikz/circuitikzmanual.pdf
+%----------------------------------------------------------------------
+
+
+%-----------------------SEKCJA DANYCH----------------------------------
+\def\tytul{Drgania i Fale} %<<< tytuł ćwiczenia
+\def\nrcw{6} %<<< numer cwiczenia
+\def\data{\today} %<< data wykonania
+\def\prowadzacy{dr inż. Ewa Frączek} %<<<prowadzący
+\def\tworcy{Byczko Maciej\\Maziec Michał\\Pomarański Maciej} %<<< autorzy
+\def\nrgrupy{C} %<<<numer grupy
+\def\zajinfo{Tydzień parzysty\\ Godzina 11:15-13:00} %<<<informacje dotyczące zajęć
+
+\lhead{Ćwiczenia z fizyki - \tytul} %typ dokumentu tj Sprawozdanie, zadania itp.
+
+%JEZELI COS JESZCZE POTRZEBA W TEJ SEKCJI TO POINFORMOWAĆ!!!
+%----------------------------------------------------------------------
+
+%-----------------------SEKCJA FORMATOWANIA----------------------------
+% \textbf{pogrubienie}  \textit{kursywa}    \underline{podkreślenie}
+
+%----------------------------------------------------------------------
+
+
+
+\begin{document}
+
+%-------------------------------------TABELA-DANYCH--------------------------------------------------
+    \begin{table}[H]
+        \centering
+        \resizebox{\textwidth}{!}{
+        \begin{tabular}{|c|c|c|}\hline
+            \begin{tabular}[c]{@{}c@{}}                     \tworcy     \end{tabular}&
+            \begin{tabular}[c]{@{}c@{}}Prowadzący:\\        \prowadzacy \end{tabular}&
+            \begin{tabular}[c]{@{}c@{}}Numer ćwiczenia\\    \nrcw       \end{tabular}        \\\hline
+            \begin{tabular}[c]{@{}c@{}}Grupa nr.\\          \nrgrupy    \end{tabular}& 
+            \begin{tabular}[c]{@{}c@{}}Temat ćwiczenia:\\   \tytul      \end{tabular}& Ocena:\\\hline
+            \begin{tabular}[c]{@{}c@{}}                     \zajinfo    \end{tabular}&
+            \begin{tabular}[c]{@{}c@{}}Data wykonania:\\    \data       \end{tabular}&       \\\hline
+        \end{tabular}}
+    \end{table}
+%----------------------------------------------------------------------------------------------------
+
+    \centering
+    \section{Zadania do zrobienia}
+        \subsection{Zadanie 1}
+            \subsubsection{Polecenie}
+                Zad.3(P) Ile wynosi stosunek energii kinetycznej do potencjalnej ciała wykonującego drgania harmoniczne 
+                kosinusoidalne dla chwili czasu t=$\frac{T}{6}$, jeżeli faza początkowa wynosi zero?\\ 
+                Ile będzie wynosił ten sam stosunek energii dla drgania harmonicznego sinusoidalnego?
+            \subsubsection{Rozwiązanie}
+                \textbf{Wzory:}\\
+                $E_k(t)=\frac{1}{2}mv^2(t)\Leftrightarrow E_k(t)=\frac{1}{2}m[x_0\omega _0\sin(\omega_0t+\phi)]^2$\\
+                $E_p(t)=\frac{1}{2}kx^2(t)\Leftrightarrow E_p(t)=\frac{1}{2}k[x_0\cos(\omega_0t+\phi)]^2$\\
+                \textbf{Obliczenia:}\\
+                $\frac{E_k(t)}{E_p(t)}=\frac{\frac{1}{2}m[x_0\omega _0\sin(\omega_0t)]^2}{\frac{1}{2}k[x_0\cos(\omega_0t)]^2}$\\
+                $\frac{E_k(t)}{E_p(t)}=\frac{mx_0^2\omega_0^2[\sin(\frac{2\pi}{T}*\frac{T}{6}]^2}{kx_0^2[\cos(\frac{2\pi}{T}*\frac{T}{6})]^2}$\\
+                $\frac{E_k(t)}{E_p(t)}=\frac{m\omega _0^2[\sin(\frac{\pi}{3})]^2}{k[\cos(\frac{\pi}{3})]^2}$\\
+                $\frac{E_k(t)}{E_p(t)}=\frac{k}{k}*[\tan(\frac{\pi}{3})]^2 = 3$\\
+                Dla drgania harmonicznego sinusoidalnego stosunek będzie wynosił $\frac{\sqrt{3}}{3}$ ponieważ:\\
+                $\frac{E_k(t)}{E_p(t)}=\frac{k}{k}*[\cot(\frac{\pi}{3})]^2 = \frac{1}{3}$\\
+                \clearpage
+        \subsection{Zadanie 2}
+            \subsubsection{Polecenie}
+                Zad.9. Wartości amplitud wymuszonych drgań harmonicznych są równe dla dwóch częstości siły wymuszającej: 
+                $\omega_1$=400 $\frac{rad}{s}$ oraz $\omega_2$=600 $\frac{rad}{s}$. 
+                Wyznacz częstość $\omega_{rez}$, dla której amplituda drgań wymuszonych osiągnie maksymalną wartość.
+            \subsection{Rozwiązanie}
+                \textbf{Wzory:}\\
+                Mechaniczne drgania wymuszone:$F(t)=F_0\cos(\omega t)$\\
+                $\frac{d^2x(t)}{dt^2}+2\beta\frac{dx(t)}{dt}+\omega_0^2x=f_0\cos(\omega t)$\\
+                Współczynnik tłumienia:$2\beta=\frac{b}{m}$\\
+                Częstość oscylatora nietłumionego:$omega_0^2=\frac{k}{m}$\\
+                $f_0=\frac{F_0}{m}$\\
+                Częstość rezonansowa:$\omega_r=\sqrt{\omega_0^2-2\beta^2}$\\
+                Amplituda wymuszona:$A(\omega)=\frac{F_0}{m\sqrt{(\omega_0^2-\omega^2)^2+4\beta^2\omega^2}}$
+                Amplituda rezonansowa:$A_r=\frac{f_0}{2\beta(\omega_0^2-\beta^2)}$\\
+                \textbf{Obliczenia:}\\
+                $A(\omega)=\frac{F_0}{m\sqrt{(\omega_0^2-\omega^2)^2+4\beta^2\omega^2}}$\\
+                $\omega_r=\sqrt{\omega_0^2-2\beta^2}$    $A(\omega_1)=A(\omega_2)$\\
+                $(\omega_0^2-\omega_1^2)^2+4\beta^2\omega_1^2=(\omega_0^2-\omega_2^2)^2+4\beta^2\omega_2^2$\\
+                $\cancel{\omega^4_0}-2\omega^2_0\omega^2_1+\omega^4_1+4\beta2\omega^2_1=\cancel{\omega^4_0}-2\omega^2_0\omega^2_2+\omega^4_2+4\beta2\omega^2_2$\\
+                $\omega^4_1-2\omega^2_1(\omega^2_0-2\beta^2)=\omega^4_2-2\omega^2_2(\omega^2_0-2\beta^2)$\\
+                $\omega^4_1-2\omega^2_1\omega^2_r=\omega^4_2-2\omega^2_2\omega^2_r$\\
+                Wyznaczenie $\omega_r$:\\
+                $-2\omega^2_1\omega^2_r+2\omega^2_2\omega^2_r=\omega^4_2-\omega^4_1$\\
+                $\omega^2_r(2\omega^2_2-2\omega^2_1)=(\omega^2_2-\omega^2_1)(\omega^2_2+\omega^2_1)$\\
+                $\omega_r=\sqrt{\frac{(\omega^2_2-\omega^2_1)(\omega^2_2+\omega^2_1)}{2(\omega^2_2-\omega^2_1)}}$\\
+                $\omega_r=\sqrt{\frac{\omega^2_1+\omega^2_2}{2}}$\\
+                $\omega_r=\sqrt{\frac{600^2+400^2}{2}}=510\frac{rad}{s}$\\
+\clearpage
+    \section{Wymyślone zadanie z fali kulistej}
+        \subsection{Polecenie}
+        Chłopak na polanie postanowił krzyknąć czym wytworzył falę kulistą, która powoduje zmianę ciśnienia $\Delta p_m = \sqrt{816*10^{-6}}[Pa]$.
+        Oblicz poziom natężenia wydanego przez niego dźwieku w skali decybelowej.\\
+        Przyjmij, że gęstość powietrza $\rho = 1,2 [\frac{kg}{m^3}]$, prędkość dźwięku w powietrzu $V = 340 [\frac{m}{s}]$ a próg słyszalności człowieka (dla 1000Hz) $I_0 = 10^{-12}[\frac{W}{m^2}]$\\
+        \subsection{Rozwiązanie}
+        \textbf{Dane:}\\
+        
+     $\rho = 1.2[\frac{kg}{m^3}]$\\
+     $V = 340[\frac{m}{s}]$\\
+     $\Delta p_m = \sqrt{816*10^{-6}}[Pa]$\\
+     $I_0 = 10^{-12}[\frac{W}{m^2}]$\\
+            
+        
+    
+   \textbf{Szukane:}\\ 
+     $I[dB] = ?$
+    
+    
+    \textbf{Obliczenia:}\\
+    $I = \frac{1}{2}\rho V\omega_0^2 s_m^2 $\\
+    $\Delta p_m = \rho V \omega s_m$\\
+    $\omega = \frac{\Delta p_m}{\rho VS_m}$\\
+    $I = \frac{\Delta p_m^2}{2\rho V}$\\
+    $[dB] = 10\log(\frac{I}{I_0})$  ==  $10\log(\frac{\Delta p_m^2}{2\rho VI_0})$\\
+    $[dB] = 10\log(\frac{816*10^{-6}}{2*1.2*340*10^{-12}}) = 10\log10^6 = 60[dB]$\\
+    Odp: Poziom dźwięku o szukanym natężeniu wynosi 60[dB].
+    
+
+
+
+
+\end{document}
