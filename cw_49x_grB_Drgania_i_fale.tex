@@ -131,18 +131,36 @@
                 $\omega_r=\sqrt{\frac{(\omega^2_2-\omega^2_1)(\omega^2_2+\omega^2_1)}{2(\omega^2_2-\omega^2_1)}}$\\
                 $\omega_r=\sqrt{\frac{\omega^2_1+\omega^2_2}{2}}$\\
                 $\omega_r=\sqrt{\frac{600^2+400^2}{2}}=510\frac{rad}{s}$\\
-
+\clearpage
     \section{Wymyślone zadanie z fali kulistej}
         \subsection{Polecenie}
+        Chłopak na polanie postanowił krzyknąć czym sprokurował falę kulistą która powoduje zmianę ciśnienia $\Delta p_m = \sqrt{816*10^{-6}}[Pa]$.
+        Oblicz poziom natezenia wydanego przez niego dzwieku w skali decybelowej.\\
+        Przyjmij, że gęstość powietrza $\rho = 1,2 [\frac{kg}{m^3}]$, prędkość dźwięku w powietrzu $V = 340 [\frac{m}{s}]$ a próg słyszalności człowieka (dla 1000Hz) $I_0 = 10^{-12}[\frac{W}{m^2}]$\\
         \subsection{Rozwiązanie}
-        \textbf{Wzory:}\\
-        Natężenie fali: $I=\frac{P_{zr}}{4\Pi r^2}$\\
-        Prawo odwrotnych kwadratów: $\frac{I_1}{I_2}=\frac{r_2^2}{r_1^2}$\\
-        $I=\frac{1}{2}\rho v \omega ^2 s_m^2$\\
-        $\Phi (r,t)=\frac{s_0}{r}\sin (kr-\omega t)$\\
-        Interferencja kostruktywna:$L_2-L_1=m\lambda$\\
-        Interferencja destruktywna:$L_2-L_1=(m+\frac{1}{2})\lambda$\\
-        $m \in \mathbb{N} $
+        \textbf{Dane:}\\
+        
+     $\rho = 1.2[\frac{kg}{m^3}]$\\
+     $V = 340[\frac{m}{s}]$\\
+     $\Delta P_m = \sqrt{816*10^{-6}}[Pa]$\\
+     $I_0 = 10^{-12}[\frac{W}{m^2}]$\\
+            
+        
+    
+   \textbf{Szukane:}\\ 
+     $I[dB] = ?$
+    
+    
+    \textbf{Obliczenia:}\\
+    $I = \frac{1}{2}\rho V\omega_0^2 s_m^2 $\\
+    $\Delta P_m = \rho V \omega s_m$\\
+    $\omega = \frac{\Delta P_m}{\rho VS_m}$\\
+    $I = \frac{\Delta P_m^2}{2\rho V}$\\
+    $[dB] = 10\log(\frac{I}{I_0})$  ==  $10\log(\frac{\Delta P_m^2}{2\rho VI_0})$\\
+    $[dB] = 10\log(\frac{816*10^{-6}}{2*1.2*340*10^{-12}}) = 10\log10^6 = 60[dB]$\\
+    Odp: Poziom dźwięku o szukanym natężeniu wynosi 60[dB].
+    
+
 
 
 
